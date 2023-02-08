@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Lista de Tarefas</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <h3>Lista de Tarefas</h3>
+Digite aqui a tarefa a ser executada:<br>
+<textarea id="novaTarefa" cols="50" rows="3"></textarea><br>
+  <input type="button" value="Inserir" onclick="inserir()"><br>
+  <p>Digite aqui o texto da Tarefa para aplicar comandos:</p>
+  <input type="text" size="50" id="textoTarefa"><br>
+  <input type="button" value="Pesquisar" onclick="pesquisar()">
+  <input type="button" value="Alterar" onclick="alterar()">
+  <input type="button" value="Excluir" onclick="excluir()">
+  <p id="listaTarefas"></p>
+  
+</body>
+
+</html>
