@@ -26,7 +26,9 @@ const pesquisar = function() {
   const textoTarefa = document.getElementById("textoTarefa");
   const texto = textoTarefa.value;
   let resultadoPesquisa = tarefas.filter(item => item.indexOf(texto) >= 0);
-  alert(resultadoPesquisa);
+  let dividir = resultadoPesquisa.join(", ");
+  
+  alert(dividir);
 
 };
 
