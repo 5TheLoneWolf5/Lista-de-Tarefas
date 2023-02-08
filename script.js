@@ -34,13 +34,25 @@ const alterar = () => {
   
   const textoTarefa = document.getElementById("textoTarefa");
   const novaTarefa = document.getElementById("novaTarefa");
-  const listaTarefas = document.getElementById("listaTarefas");
+  let listaTarefas = document.getElementById("listaTarefas");
 
   let dividir = listaTarefas.innerHTML.split("<br>");
-  let achar = listaTarefas.
+  let acharItem = dividir.find(item => item == textoTarefa.value);
     
-  novaTarefa.value = listaTarefas.value;
-  textoTarefa.value = "";
+  if (acharItem) {
+
+    novaTarefa.value = acharItem;
+    textoTarefa.value = "";
+
+    let removeIndex = dividir.indexOf(acharItem);
+    dividir.splice(removeIndex, 1);
+
+    listaTarefas.innerHTML = "";
+    dividir.forEach(item => listaTarefas.innerHTML += item + "<br>");
+    
+  } else {
+    return;
+  }
   
 }
 
