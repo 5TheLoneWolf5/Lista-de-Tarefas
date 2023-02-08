@@ -48,7 +48,10 @@ const alterar = () => {
     dividir.splice(removeIndex, 1);
 
     listaTarefas.innerHTML = "";
-    dividir.forEach(item => listaTarefas.innerHTML += item + "<br>");
+    let filtrarBrancos = dividir.filter(n => n);
+    filtrarBrancos.forEach(item => listaTarefas.innerHTML += item + "<br>");
+
+    
     
   } else {
     return;
@@ -69,10 +72,12 @@ const excluir = () => {
 
     let filtro = tarefaSeparada.filter(element => element !== textoTarefa.value);
     console.log(filtro);
+    let filtrarBrancos = filtro.filter(n => n);
+    console.log(filtrarBrancos);
 
-    for (i = 0; i < filtro.length; i++) {
+    for (i = 0; i < filtrarBrancos.length; i++) {
 
-      listaTarefas.innerHTML += filtro[i] + "<br>";
+      listaTarefas.innerHTML += filtrarBrancos[i] + "<br>";
 
     }
 
